@@ -38,3 +38,18 @@ A CI workflow is included at `.github/workflows/build-windows-exe.yml`.
 3. Run **Build Windows EXE** (or push to your main branch).
 4. Download the artifact named **JS-Quest-Blocks-Windows**.
 5. Extract it to get the generated `.exe` files.
+
+## Publish direct `.exe` downloads via GitHub Releases
+A release workflow is included at `.github/workflows/release-windows-exe.yml`.
+
+1. Push a version tag (example: `v1.0.0`).
+2. GitHub Actions will build Windows executables.
+3. A GitHub Release is created automatically with `.exe` files attached.
+4. Share the Release URL so kids/parents can download directly.
+
+Example:
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
