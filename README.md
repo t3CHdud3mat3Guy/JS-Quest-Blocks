@@ -11,22 +11,30 @@ A kid-friendly, Scratch-like JavaScript learning game where children build block
 ## Run in browser
 Open `index.html` directly.
 
-## Build a Windows `.exe`
-This project is configured with Electron + electron-builder so you can package it as a downloadable executable.
+## Build a Windows `.exe` locally
+This project uses Electron + electron-builder so you can package a downloadable executable.
 
-### 1) Install dependencies
+### Option A: One-click Windows script
+On Windows, double-click:
+
+```bat
+scripts\build-windows.bat
+```
+
+### Option B: Manual commands
 ```bash
 npm install
-```
-
-### 2) Launch desktop app (optional)
-```bash
 npm start
-```
-
-### 3) Build `.exe` artifacts
-```bash
 npm run pack:win
 ```
 
-Generated files will appear in `dist/` (for example NSIS installer `.exe` and portable `.exe`).
+Generated files will appear in `dist/` (NSIS installer `.exe` and portable `.exe`).
+
+## Download `.exe` from GitHub Actions
+A CI workflow is included at `.github/workflows/build-windows-exe.yml`.
+
+1. Push this repository to GitHub.
+2. Open the **Actions** tab.
+3. Run **Build Windows EXE** (or push to your main branch).
+4. Download the artifact named **JS-Quest-Blocks-Windows**.
+5. Extract it to get the generated `.exe` files.
