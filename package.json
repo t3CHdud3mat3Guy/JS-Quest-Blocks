@@ -1,0 +1,40 @@
+{
+  "name": "js-quest-blocks",
+  "version": "2.0.0",
+  "description": "Scratch-like and advanced JavaScript learning game",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build:web": "vite build",
+    "preview": "vite preview",
+    "start": "electron .",
+    "pack:win": "electron-builder --win nsis portable"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12",
+    "vite": "^5.4.10"
+  },
+  "build": {
+    "appId": "com.jsquest.blocks",
+    "productName": "JS Quest Blocks",
+    "files": [
+      "index.html",
+      "main.js",
+      "package.json",
+      "src/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    }
+  }
+}
